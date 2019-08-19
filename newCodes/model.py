@@ -85,9 +85,9 @@ class MeanVarLoss(nn.Module):
         return torch.mean(meanLoss), torch.mean(varLoss)
 
 
-class ordinalLoss(nn.Module):
+class OrdinalLoss(nn.Module):
     def __init__(self, space):
-        super(ordinalLoss, self).__init__()
+        super(OrdinalLoss, self).__init__()
         self.epilson = 1e-10
         self.gamma = 2
         self.alpha = 0.25
@@ -185,9 +185,9 @@ class MeanVarianceNormalizer(nn.Module):
         return x
 
 
-class regressionClassification(nn.Module):
+class RegressionClassification(nn.Module):
     def __init__(self, nClass):
-        super(regressionClassification, self).__init__()
+        super(RegressionClassification, self).__init__()
         self.nClass = nClass
 
         self.conv = nn.Sequential(
@@ -220,9 +220,9 @@ class regressionClassification(nn.Module):
         return x
 
 
-class rainFallClassification(nn.Module):
+class RainFallClassification(nn.Module):
     def __init__(self):
-        super(rainFallClassification, self).__init__()
+        super(RainFallClassification, self).__init__()
 
         self.conv = nn.Sequential(
             BasicConv2d(37, 64, 3, bn=True, padding=1),
